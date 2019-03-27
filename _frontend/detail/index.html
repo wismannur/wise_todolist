@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Wise ToDoList</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/bootstrap-datetimepicker.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/bootstrap-datetimepicker.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/preloading_screen.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/toastr.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css">
@@ -60,7 +61,7 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="select-container">
-                                        <span class="select-arrow fa fa-chevron-down"></span>
+                                        <span class="select-arrow glyphicon glyphicon-chevron-down"></span>
                                         <select id="categoryForm" class="my-select form-control">
                                             <option value="easy">Easy</option>
                                             <option value="difficult">Difficult</option>
@@ -84,7 +85,7 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="select-container">
-                                        <span class="select-arrow fa fa-chevron-down"></span>
+                                        <span class="select-arrow glyphicon glyphicon-chevron-down"></span>
                                         <select id="statusForm" class="my-select form-control">
                                             <option value="done">Done</option>
                                             <option value="not done">Not Done</option>
@@ -93,10 +94,10 @@
                                 </div>
                             </div>
                             <div class="row field-br">
-                                <div class="col-sm-12 addNewToDo">
-                                    <button class="btn btn-primary" id="addNewToDo">Add</button>
-                                    <button class="btn btn-warning" id="updateToDo">Update</button>
-                                    <button class="btn btn-danger" id="cancelToDo">Cancel</button>
+                                <div class="col-sm-12 addNewTask">
+                                    <button class="btn btn-primary" id="addNewTask">Add</button>
+                                    <button class="btn btn-warning" id="updateTask">Update</button>
+                                    <button class="btn btn-danger" id="cancelTask">Cancel</button>
                                     <div class="spinner-border text-info spinner_req" role="status">
                                         <span class="sr-only">Loading...</span>
                                     </div>
@@ -117,7 +118,7 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="select-container">
-                                <span class="select-arrow fa fa-chevron-down"></span>
+                                <span class="select-arrow glyphicon glyphicon-chevron-down"></span>
                                 <select id="filterTable" class="my-select form-control">
                                     <option value="easy">Easy</option>
                                     <option value="difficult">Difficult</option>

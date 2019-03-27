@@ -96,7 +96,7 @@ $(document).ready(function() {
     })
 
     $('#time').datetimepicker({
-        format : 'HH:mm',
+        format : 'LT',
     })
 
     // setTimeout(function() {

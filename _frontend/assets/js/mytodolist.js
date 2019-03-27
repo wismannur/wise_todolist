@@ -10,7 +10,6 @@ $(document).ready(function() {
             },
             success: function(data) {
                 $('#myTable').find('tbody > .data-list').remove()
-                console.log(data)
                 if (data != "0 results") {
                     let result = JSON.parse(data)
                     for (let i = 0; i < result.length; i++) {
@@ -43,6 +42,42 @@ $(document).ready(function() {
     
         })
     }
+
+    function addNewToDo(obj) {
+        let a = obj;
+        $.ajax({
+            url: window.API + 'run_sql_post.php',
+            type: 'POST',
+            data : {
+                sql : "INSERT INTO todo_master (name_todo, for_date, created_at, updated_at, description) VALUES ('"+ a.name_todo +"', '"+ a.for_date +"', '"+ a.created_at +"', '"+ a.updated_at +"', '"+ a.description +"')"
+            },
+            success: function(data) {
+                $('.spinner_req').show();
+                if (data == 'true') {
+                    console.log('data berhasil di simpan');
+                    $('#collapsible').click();
+                    $('body').removeClass('loaded');
+                    populateNull()
+                    getFirstData()
+                } else {
+                    console.log('error')
+                }
+            }
+    
+        })
+    }
+
+    $('#addNewToDo').on('click', function() {
+        var obj = {
+            name_todo: $('#nameToDo').val(),
+            for_date: $('#forDate').val(),
+            created_at: currentDate("date time"),
+            updated_at: currentDate("date time"),
+            description: $('#descriptionToDo').val()
+        }
+
+        addNewToDo(obj)
+    })
 
     getFirstData()
 })
