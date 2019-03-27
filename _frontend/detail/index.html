@@ -16,7 +16,7 @@
 <body>
     <div class="navbar-wagon">
         <!-- Logo -->
-        <a href="/_frontend/" class="navbar-wagon-brand">
+        <a href="/" class="navbar-wagon-brand">
             <h3>Wise ToDoList</h3>
         </a>
         
@@ -110,21 +110,38 @@
 
             <br>
             <div class="filter">
-                <h3>Filter</h3>
                 <div class="col-sm-12">
                     <div class="row">
-                        <div class="col-sm-4">
-                            <input type="text" id="myInputFilter" class="form-control" placeholder="Search" title="Type keywords">
+                        <div class="col-sm-5">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h4>Search</h4>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" id="myInputFilter" class="form-control" placeholder="Search by Name Task" title="Type keywords">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+
                         </div>
                         <div class="col-sm-4">
-                            <div class="select-container">
-                                <span class="select-arrow glyphicon glyphicon-chevron-down"></span>
-                                <select id="filterTable" class="my-select form-control">
-                                    <option value="easy">Easy</option>
-                                    <option value="difficult">Difficult</option>
-                                    <option value="done">Done</option>
-                                    <option value="not done">Not Done</option>
-                                </select>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h4>Filter</h4>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="select-container">
+                                        <span class="select-arrow glyphicon glyphicon-chevron-down"></span>
+                                        <select id="filterTable" class="my-select form-control">
+                                            <option value="all">All</option>
+                                            <option value="easy">Easy</option>
+                                            <option value="difficult">Difficult</option>
+                                            <option value="done">Done</option>
+                                            <option value="not done">Not Done</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -138,9 +155,9 @@
                     <th style="width:3%;">No</th>
                     <th style="width:10%;">Time</th>
                     <th style="width:37%;">Name Task</th>
-                    <th style="width:13%;">Category</th>
-                    <th style="width:13%;">Status</th>
-                    <th style="width:17%;">Action</th>
+                    <th style="width:11%;">Category</th>
+                    <th style="width:11%;">Status</th>
+                    <th style="width:13%;">Action</th>
                 </tr>
             </table>
         </div>
@@ -159,7 +176,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modalDeleteToDo" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+    <div class="modal fade" id="modalDeleteTask" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
             <div class="modal-header">
@@ -168,17 +185,17 @@
             </div>
             <div class="modal-body">
                 <div class="message-req-sample">
-                    <p>Are you sure want do delete this ToDo ?.</p>
+                    <p>Are you sure want do delete this Task ?.</p>
                 </div>
             </div>
             <div class="modal-footer">
                 <div class="spinner-border text-danger spinner_req" role="status" style="display: none; margin-right: 10px;">
                     <span class="sr-only">Loading...</span>
                 </div>
-                <button id="fixDeleteToDo" type="button" class="btn btn-danger" >
+                <button id="fixDeleteTask" type="button" class="btn btn-danger" >
                     Delete
                 </button>
-                <button id="cancelReqSample" type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>			
+                <button id="cancelTask" type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>			
             </div>
             </div>
         </div>

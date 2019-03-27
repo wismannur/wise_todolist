@@ -30,11 +30,11 @@ CREATE TABLE `todo_item` (
   `name_todo_item` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_todo_master` (`id_todo_master`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 /*Data for the table `todo_item` */
 
-insert  into `todo_item`(`id`,`id_todo_master`,`status`,`category`,`time`,`description`,`name_todo_item`) values (1,5,'not done','easy','07:00:00','pray dhuha','pray'),(2,5,'not done','easy','07:30:00','check perlengkapan','check and recheck'),(3,5,'not done','easy','08:00:00','berangkat kerja','otw kantor');
+insert  into `todo_item`(`id`,`id_todo_master`,`status`,`category`,`time`,`description`,`name_todo_item`) values (1,5,'not done','easy','07:00:00','pray dhuha','pray'),(2,5,'done','easy','07:30:00','check perlengkapan','check and recheck'),(3,5,'not done','difficult','08:00:00','berangkat kerja','otw kantor'),(8,6,'not done','easy','07:00:00',NULL,'persiapan');
 
 /*Table structure for table `todo_master` */
 
@@ -48,11 +48,11 @@ CREATE TABLE `todo_master` (
   `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `todo_master` */
 
-insert  into `todo_master`(`id`,`name_todo`,`for_date`,`created_at`,`updated_at`,`description`) values (5,'For Work','2019-03-28','2019-03-27 09:53:41','2019-03-27 09:53:41','For Work Tomorrow');
+insert  into `todo_master`(`id`,`name_todo`,`for_date`,`created_at`,`updated_at`,`description`) values (5,'For Work','2019-03-28','2019-03-27 09:53:41','2019-03-27 09:53:41','For Work Tomorrow'),(6,'You can','2019-03-29','2019-03-27 17:53:05','2019-03-27 17:53:05','yes you can');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

@@ -58,7 +58,7 @@ $(document).ready(function() {
                     console.log('data berhasil di simpan');
                     $('#collapsible').click();
                     $('body').removeClass('loaded');
-                    populateNull()
+                    populateNullMaster()
                     getFirstData()
                 } else {
                     console.log('error')
@@ -82,7 +82,7 @@ $(document).ready(function() {
                     console.log('data berhasil di update');
                     $('#collapsible').click();
                     $('body').removeClass('loaded');
-                    populateNull()
+                    populateNullMaster()
                     getFirstData()
                     $('#collapsible').html("Add New ToDoList")
                     $('#updateToDo').hide()
@@ -96,7 +96,7 @@ $(document).ready(function() {
         })
     }
 
-    function deleteToDo(id) {
+    function fixDeleteToDo(id) {
         $.ajax({
             url: window.API + 'run_sql_post.php',
             type: 'POST',
@@ -172,7 +172,7 @@ $(document).ready(function() {
 
     $('#fixDeleteToDo').on('click', function() {
         let id = $(this).attr('data-id')
-        deleteToDo(id)
+        fixDeleteToDo(id)
     })
 
     window.detailTodo = function(eq) {

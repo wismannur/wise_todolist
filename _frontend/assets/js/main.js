@@ -9,24 +9,48 @@ $(document).ready(function() {
         table = document.getElementById("myTable");
         tr = table.getElementsByTagName("tr");
         fil = $('#filterTable').val();
-        console.log(fil)
         for (i = 0; i < tr.length; i++) {
             if (fil == "easy" || fil == "difficult") {
                 td = tr[i].getElementsByTagName("td")[3];
             } else if (fil == "done" || fil == "not done") {
                 td = tr[i].getElementsByTagName("td")[4];
+            } else if (fil == "all")  {
+                $(tr[i]).show()
             }
 
             if (td) {
                 txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                if (txtValue.toUpperCase() == fil.toUpperCase()) {
                     tr[i].style.display = "";
                 } else {
                     tr[i].style.display = "none";
+                    $(tr[i]).hide()
                 }
             }       
         }
     }
+
+    function searchByName() {
+        // Declare variables 
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInputFilter");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+      
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[2];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          } 
+        }
+      }
 
     window.convertDate = function(date, month, year) {
         if (month.slice(0,1) == 0) {
@@ -63,13 +87,24 @@ $(document).ready(function() {
 
     }
 
-    window.populateNull = function() {
+    window.populateNullMaster = function() {
         $('#nameToDo').val("");
         $('#forDate').val("");
         $('#descriptionToDo').val("");
     }
 
+    window.populateNullItem = function() {
+        $('#nameTask').val("")
+        $('#time').val("")
+        $('#categoryForm').val("")
+        $('#statusForm').val("")
+    }
+
     $('#myInputFilter').on('keyup', function() {
+        searchByName()
+    })
+
+    $('#filterTable').on('change', function(){
         myFilterTable()
     })
 
@@ -88,7 +123,15 @@ $(document).ready(function() {
         $('#collapsible').click()
         $('#updateToDo').hide()
         $('#addNewToDo').show();
-        populateNull()
+        populateNullMaster()
+    })
+
+    $('#cancelTask').on('click', function() {
+        $('#collapsible').html("Add New Task")
+        $('#collapsible').click()
+        $('#updateTask').hide()
+        $('#addNewTask').show();
+        populateNullItem()
     })
 
     $('#forDate').datetimepicker({
@@ -96,7 +139,7 @@ $(document).ready(function() {
     })
 
     $('#time').datetimepicker({
-        format : 'LT',
+        format : 'HH:mm:ss',
     })
 
     // setTimeout(function() {
