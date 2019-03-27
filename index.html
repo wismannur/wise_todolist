@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wise ToDoList</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./_frontend/assets/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./_frontend/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./_frontend/assets/css/preloading_screen.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./_frontend/assets/css/toastr.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./_frontend/assets/css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <div class="navbar-wagon">
+        <!-- Logo -->
+        <a href="/" class="navbar-wagon-brand">
+            <h3>Wise ToDoList</h3>
+        </a>
+        
+        <!-- Right Navigation -->
+        <div class="navbar-wagon-right hidden-xs hidden-sm">
+        
+            <a href="" class="navbar-wagon-item navbar-wagon-link">My ToDoList</a>
+            <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
+            <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
+        
+            <!-- Profile picture with dropdown list -->
+            <div class="navbar-wagon-item">
+                <a href="https://www.linkedin.com/in/wismannur/" target="_blank">
+                    <img src="https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/39253000_1808829692585302_948894769747066880_n.jpg?_nc_cat=105&_nc_ht=scontent-sin6-2.xx&oh=870cede34fc966afb9f2a7d4b5cc435f&oe=5D44B501" class="avatar dropdown-toggle" id="navbar-wagon-menu">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-content">
+        <div id="myContent">
+            <a href="/_frontend/"><h3>You must be link to /_frontend/</h3></a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-links">
+            <a href="https://github.com/wismannur"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/wismannur/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/wismannur"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/wismannur"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/wismannur/"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+            2019 Indonesia <i class="fas fa-heart"></i> at Bandung City
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDeleteToDo" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Delete ToDoList</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="message-req-sample">
+                    <p>Are you sure want do delete this ToDo ?.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="spinner-border text-danger spinner_req" role="status" style="display: none; margin-right: 10px;">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <button id="fixDeleteToDo" type="button" class="btn btn-danger" >
+                    Delete
+                </button>
+                <button id="cancelReqSample" type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>			
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./_frontend/assets/js/popper.min.js"></script>
+    <script src="./_frontend/assets/js/bootstrap.min.js"></script>
+    <script src="./_frontend/assets/js/moment.min.js"></script>
+    <script src="./_frontend/assets/js/bootstrap-datetimepicker.js"></script>
+    <script src="./_frontend/assets/js/toastr.js"></script>
+    <script src="./_frontend/assets/js/main.js"></script>
+    <script src="./_frontend/assets/js/index.js"></script>
+</body>
+</html>
