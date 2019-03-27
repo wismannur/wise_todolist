@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Wise ToDoList</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/bootstrap-datetimepicker.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/preloading_screen.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/toastr.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/preloading_screen.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/toastr.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
@@ -37,11 +37,11 @@
 
     <div class="container">
         <div id="myContent">
-            <h2>My ToDoList</h2>
+            <h2>Detail ToDoList</h2>
 
             <br>
 
-            <button class="collapsible" id="collapsible">Add New ToDoList</button>
+            <button class="collapsible" id="collapsible">Add New task</button>
             <div class="content-add-new-list">
                 <div class="col-sm-12">
                     <div class="row">
@@ -87,15 +87,17 @@
                 </div>
             </div>
 
-            <!-- <input type="text" id="myInputFilter" placeholder="Search for names.." title="Type in a name"> -->
+            <input type="text" id="myInputFilter" placeholder="Search" title="Type keywords">
+            
             <br />
 
             <table id="myTable">
                 <tr class="header">
                     <th style="width:3%;">No</th>
-                    <th style="width:27%;">Name ToDoList</th>
-                    <th style="width:13%;">For Date</th>
-                    <th style="width:29%;">Description</th>
+                    <th style="width:10%;">Time</th>
+                    <th style="width:37%;">Name Task</th>
+                    <th style="width:13%;">Category</th>
+                    <th style="width:13%;">Status</th>
                     <th style="width:17%;">Action</th>
                 </tr>
             </table>
@@ -147,12 +149,12 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/js/moment.min.js"></script>
-    <script src="./assets/js/bootstrap-datetimepicker.js"></script>
-    <script src="./assets/js/toastr.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/index.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/moment.min.js"></script>
+    <script src="../assets/js/bootstrap-datetimepicker.js"></script>
+    <script src="../assets/js/toastr.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/mytodolist.js"></script>
 </body>
 </html>
