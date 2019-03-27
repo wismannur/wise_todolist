@@ -48,28 +48,48 @@
                         <div class="col-sm-6">
                             <div class="row field-br">
                                 <div class="col-sm-3">
-                                    <p class="tittle">Name ToDoList</p>
+                                    <p class="tittle">Name Task</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" id="nameToDo" class="form-control">
+                                    <input type="text" id="nameTask" class="form-control">
                                 </div>
                             </div>
                             <div class="row field-br">
                                 <div class="col-sm-3">
-                                    <p class="tittle">Description</p>
+                                    <p class="tittle">Category</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <textarea name="description" id="descriptionToDo" cols="30" rows="10" class="form-control"></textarea>
+                                    <div class="select-container">
+                                        <span class="select-arrow fa fa-chevron-down"></span>
+                                        <select id="categoryForm" class="my-select form-control">
+                                            <option value="easy">Easy</option>
+                                            <option value="difficult">Difficult</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="row field-br">
                                 <div class="col-sm-3">
-                                    <p class="tittle">For Date</p>
+                                    <p class="tittle">Time</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" id="forDate" class="form-control">
+                                    <input type="text" id="time" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row field-br">
+                                <div class="col-sm-3">
+                                    <p class="tittle">Status</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="select-container">
+                                        <span class="select-arrow fa fa-chevron-down"></span>
+                                        <select id="statusForm" class="my-select form-control">
+                                            <option value="done">Done</option>
+                                            <option value="not done">Not Done</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row field-br">
@@ -87,7 +107,28 @@
                 </div>
             </div>
 
-            <input type="text" id="myInputFilter" placeholder="Search" title="Type keywords">
+            <br>
+            <div class="filter">
+                <h3>Filter</h3>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="text" id="myInputFilter" class="form-control" placeholder="Search" title="Type keywords">
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="select-container">
+                                <span class="select-arrow fa fa-chevron-down"></span>
+                                <select id="filterTable" class="my-select form-control">
+                                    <option value="easy">Easy</option>
+                                    <option value="difficult">Difficult</option>
+                                    <option value="done">Done</option>
+                                    <option value="not done">Not Done</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <br />
 

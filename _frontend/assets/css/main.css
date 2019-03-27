@@ -197,7 +197,10 @@
 #myContent #myTable td:last-child {
   text-align: center;
 }
-#myContent #myTable td.for_date {
+#myContent #myTable td.for_date,
+#myContent #myTable td.time,
+#myContent #myTable td.category,
+#myContent #myTable td.status {
   text-align: center;
 }
 #myContent #myTable td .btn-left {
@@ -225,4 +228,45 @@
 }
 #myContent #myTable tr.header {
   background-color: #007bff;
+}
+.filter .col-sm-4:first-child {
+  padding-left: 0% !important;
+}
+.select-container {
+  position: relative;
+  width: 170px;
+}
+.select-container select.my-select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  padding-left: 15px;
+  box-shadow: 3px 3px 30px #eee;
+  transition: 0.2s;
+}
+.select-container select.my-select:focus {
+  box-shadow: 3px 3px 10px #eee;
+}
+.select-container select.my-select:hover {
+  box-shadow: 3px 3px 10px #eee;
+  cursor: pointer;
+}
+.select-container select.my-select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+.select-container select.my-select::-ms-expand {
+  display: none;
+}
+.select-arrow {
+  color: #333;
+  right: 0px;
+  top: 10px;
+  width: 30px;
+  position: absolute;
+  display: block;
+  z-index: 10;
+  margin: 0 0 0 0;
+  pointer-events: none;
 }
