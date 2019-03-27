@@ -23,20 +23,83 @@
         <div class="navbar-wagon-right hidden-xs hidden-sm">
         
             <a href="" class="navbar-wagon-item navbar-wagon-link">My ToDoList</a>
-            <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
-            <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+            <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
+            <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
         
             <!-- Profile picture with dropdown list -->
             <div class="navbar-wagon-item">
                 <a href="https://www.linkedin.com/in/wismannur/" target="_blank">
-                    <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu">
+                    <img src="https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/39253000_1808829692585302_948894769747066880_n.jpg?_nc_cat=105&_nc_ht=scontent-sin6-2.xx&oh=870cede34fc966afb9f2a7d4b5cc435f&oe=5D44B501" class="avatar dropdown-toggle" id="navbar-wagon-menu">
                 </a>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <h1>Hallo Bro This is table</h1>
+        <div id="myContent">
+            <h2>My ToDoList</h2>
+
+            <br>
+
+            <button class="collapsible" id="collapsible">Add New ToDoList</button>
+            <div class="content-add-new-list">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row field-br">
+                                <div class="col-sm-3">
+                                    <p class="tittle">Name ToDoList</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" id="nameToDo" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row field-br">
+                                <div class="col-sm-3">
+                                    <p class="tittle">Description</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <textarea name="description" id="descriptionToDo" cols="30" rows="10" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row field-br">
+                                <div class="col-sm-3">
+                                    <p class="tittle">For Date</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" id="forDate" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row field-br">
+                                <div class="col-sm-12 addNewToDo">
+                                    <button class="btn btn-primary" id="addNewToDo">Add</button>
+                                    <button class="btn btn-warning" id="updateToDo">Update</button>
+                                    <button class="btn btn-danger" id="cancelToDo">Cancel</button>
+                                    <div class="spinner-border text-info spinner_req" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <input type="text" id="myInputFilter" placeholder="Search for names.." title="Type in a name"> -->
+            <br />
+
+            <table id="myTable">
+                <tr class="header">
+                    <th style="width:3%;">No</th>
+                    <th style="width:27%;">Name ToDoList</th>
+                    <th style="width:13%;">For Date</th>
+                    <th style="width:29%;">Description</th>
+                    <th style="width:17%;">Action</th>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <div class="footer">
@@ -52,12 +115,44 @@
         </div>
     </div>
 
-    <script src="./assets/js/jquery-3.3.1.slim.min.js"></script>
+    <div class="modal fade" id="modalDeleteToDo" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Delete ToDoList</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="message-req-sample">
+                    <p>Are you sure want do delete this ToDo ?.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="spinner-border text-danger spinner_req" role="status" style="display: none; margin-right: 10px;">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <button id="fixDeleteToDo" type="button" class="btn btn-danger" >
+                    Delete
+                </button>
+                <button id="cancelReqSample" type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>			
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./assets/js/popper.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/moment.min.js"></script>
     <script src="./assets/js/bootstrap-datetimepicker.js"></script>
     <script src="./assets/js/toastr.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>

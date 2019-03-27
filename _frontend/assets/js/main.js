@@ -56,6 +56,12 @@ $(document).ready(function() {
 
     }
 
+    window.populateNull = function() {
+        $('#nameToDo').val("");
+        $('#forDate').val("");
+        $('#descriptionToDo').val("");
+    }
+
     $('#myInputFilter').on('keyup', function() {
         myFilterTable()
     })
@@ -69,6 +75,14 @@ $(document).ready(function() {
           content.style.maxHeight = content.scrollHeight + "px";
         } 
     });
+
+    $('#cancelToDo').on('click', function() {
+        $('#collapsible').html("Add New ToDoList")
+        $('#collapsible').click()
+        $('#updateToDo').hide()
+        $('#addNewToDo').show();
+        populateNull()
+    })
 
     $('#forDate').datetimepicker({
         format : 'YYYY-MM-DD',
