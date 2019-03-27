@@ -1,0 +1,9 @@
+[{
+    "db" : {
+      "user" : "user",
+      "passwd" : "passwd",
+      "port" : "port",
+      "host" : "host",
+      "db" : "db"
+    }
+}]
