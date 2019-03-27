@@ -179,7 +179,7 @@ $(document).ready(function() {
         let parent = $('tr').eq(eq)
         let id = parent.find('td').eq(4).find('#detailTodo').attr('data-id')
         window.localStorage.setItem('id_detail_todolist', id)
-        window.location.replace( window.location.origin + '/wise_todolist/_frontend/detail' )
+        window.location.replace( window.location.origin + '/_frontend/detail' )
     }
 
 
