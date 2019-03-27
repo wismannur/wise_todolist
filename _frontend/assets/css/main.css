@@ -175,7 +175,7 @@
 #myContent {
   margin: 20px 0;
 }
-#myContent > h2 {
+#myContent > h3 {
   color: #007bff;
 }
 #myContent #myInputFilter {
