@@ -87,8 +87,8 @@
                                     <div class="select-container">
                                         <span class="select-arrow glyphicon glyphicon-chevron-down"></span>
                                         <select id="statusForm" class="my-select form-control">
-                                            <option value="done">Done</option>
                                             <option value="not done">Not Done</option>
+                                            <option value="done">Done</option>
                                         </select>
                                     </div>
                                 </div>
@@ -174,10 +174,22 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-6">
-                                Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+                                <h5 class="title-task-notdone">Task Not Done</h5>
+                                <div id="notDoneTask" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                </div>
                             </div>
                             <div class="col-sm-6">
-                                Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+                                <h5 class="title-task-done">Task Done</h5>
+                                <div id="doneTask" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row save-task-drag">
+                            <div class="col-sm-10">
+                                <p class="drag-notes">Notes : Please Drag and Drop Task for change status task and don't forget to click save.</p>
+                            </div>
+                            <div class="col-sm-2">
+                                <button class="btn btn-primary" id="saveTaskDrag">Save All</button>
                             </div>
                         </div>
                     </div>

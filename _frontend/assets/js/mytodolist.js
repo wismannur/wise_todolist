@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $('body').addClass('loaded');
     function getFirstData() {
         $.ajax({
             url: '../' + window.API + 'run_sql_get.php',
@@ -10,10 +9,12 @@ $(document).ready(function() {
             },
             success: function(data) {
                 $('#myTable').find('tbody > .data-list').remove()
+                $('#notDoneTask').find('.row').remove()
+                $('#doneTask').find('.row').remove()
                 if (data != "0 results") {
                     let result = JSON.parse(data)
                     for (let i = 0; i < result.length; i++) {
-                        let tr = `<tr class="data-list">
+                        let tr = `<tr class="data-list" id="data_list_${i}">
                             <td>${i+1}</td>
                             <td class="time">${result[i].time}</td>
                             <td>${result[i].name_todo_item}</td>
@@ -22,10 +23,26 @@ $(document).ready(function() {
                             <td><button id="editTask" class="btn btn-warning btn-left" data-id="${result[i].id}" onclick="editTask(${i+1})">Edit</button>
                             <button id="deleteTask" class="btn btn-danger btn-right" data-toggle="modal" data-target="#modalDeleteTask" data-id="${result[i].id}" onclick="deleteTask(${i+1})">Delete</button></td></tr>`
                         $('#myTable').find('tbody').append(tr)
+
+                        let div_drag = `<div class="row" draggable="true" ondragstart="drag(event)" data-id="${result[i].id}" id="drag_${i}">
+                            <div id="drag_time">${result[i].time}</div>
+                            <div id="drag_name_todo_item">${result[i].name_todo_item}</div>
+                            <div id="drag_category">${result[i].category}</div>
+                            <div id="drag_status">${result[i].status}</div>
+                        </div>`
+
+                        if (result[i].status == 'done') {
+                            $('#doneTask').append(div_drag)
+                            $('#data_list_'+i+'').find('.status').addClass('for-done-task')
+                            $('#drag_'+i+'').find('#drag_status').addClass('for-done-task')
+                        } else {
+                            $('#notDoneTask').append(div_drag)
+                            $('#data_list_'+i+'').find('.status').addClass('for-notdone-task')
+                            $('#drag_'+i+'').find('#drag_status').addClass('for-notdone-task')
+                        }
                     }
         
                     console.log(result)
-                    // $('.spinner_req').hide();
                 } else {
                     let tr = `<tr class="data-list">
                         <td></td>
@@ -37,9 +54,9 @@ $(document).ready(function() {
                         </tr>`
                     $('#myTable').find('tbody').append(tr)
                 }
+                $('.spinner_req').hide();
                 $('body').addClass('loaded');
             }
-    
         })
     }
 
@@ -179,4 +196,60 @@ $(document).ready(function() {
     }
 
     getFirstData()
+
+    // function for drag and drop element
+    window.allowDrop = function(ev) {
+        ev.preventDefault();
+    }
+    
+    window.drag = function(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+    
+    window.drop = function(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+
+    function updateStatusTask(id, status) {
+        $.ajax({
+            url: '../' + window.API + 'run_sql_post.php',
+            type: 'POST',
+            data : {
+                sql : "UPDATE todo_item SET status='"+ status +"' WHERE id='"+ id +"'"
+            },
+            success: function(data) {
+                if (data == 'true') {
+                    console.log('data berhasil di update');
+                } else {
+                    console.log('error')
+                }
+            }
+    
+        })
+    }
+
+    $('#saveTaskDrag').on('click', function() {
+        let notDoneTask = $('#notDoneTask')
+        let doneTask = $('#doneTask')
+        $('body').removeClass('loaded')
+
+        for (let i = 0; i < notDoneTask.find('.row').length; i++) {
+            let data_id = notDoneTask.find('.row').eq(i).attr('data-id')
+            console.log('notdone ' + data_id)
+            updateStatusTask(data_id, 'not done')
+        }
+
+        for (let j = 0; j < doneTask.find('.row').length; j++) {
+            let data_id = doneTask.find('.row').eq(j).attr('data-id')
+            console.log('done ' + data_id)
+            updateStatusTask(data_id, 'done')
+        }
+
+        setTimeout(function() {
+            getFirstData()
+        }, 2000);
+
+    })
 })

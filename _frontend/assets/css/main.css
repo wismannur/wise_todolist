@@ -220,6 +220,16 @@
 #myContent #myTable td.status {
   text-align: center;
 }
+#myContent #myTable td.status.for-notdone-task {
+  text-transform: uppercase;
+  color: #dc3545;
+  font-weight: bold;
+}
+#myContent #myTable td.status.for-done-task {
+  text-transform: uppercase;
+  color: #007bff;
+  font-weight: bold;
+}
 #myContent #myTable td .btn-left {
   border-radius: .25rem 0 0 .25rem;
   margin-right: -5px;
@@ -321,4 +331,89 @@ section .section-title {
   border-top-right-radius: .25rem;
   color: #eee;
   font-size: 20px;
+}
+#nav-tab > a {
+  width: 50%;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 > h5 {
+  text-align: center;
+  height: 40px;
+  padding: 8px;
+  color: #fff;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 > h5.title-task-notdone {
+  background: #dc3545;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 > h5.title-task-done {
+  background: #007bff;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6:first-child {
+  padding-left: 0%;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6:last-child {
+  padding-right: 0%;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 #notDoneTask {
+  border: 1px solid #dc3545;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 #doneTask {
+  border: 1px solid #007bff;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 #notDoneTask,
+#nav-drag-drop > .col-sm-12 .col-sm-6 #doneTask {
+  float: left;
+  width: 100%;
+  min-height: 500px;
+  padding: 10px;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 #notDoneTask > .row,
+#nav-drag-drop > .col-sm-12 .col-sm-6 #doneTask > .row {
+  margin: 0px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  cursor: all-scroll;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 #notDoneTask > .row:nth-child(even),
+#nav-drag-drop > .col-sm-12 .col-sm-6 #doneTask > .row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 #notDoneTask > .row #drag_time,
+#nav-drag-drop > .col-sm-12 .col-sm-6 #doneTask > .row #drag_time {
+  width: 15%;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 #notDoneTask > .row #drag_name_todo_item,
+#nav-drag-drop > .col-sm-12 .col-sm-6 #doneTask > .row #drag_name_todo_item {
+  width: 49%;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 #notDoneTask > .row #drag_category,
+#nav-drag-drop > .col-sm-12 .col-sm-6 #doneTask > .row #drag_category {
+  width: 17%;
+  text-align: center;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 #notDoneTask > .row #drag_status,
+#nav-drag-drop > .col-sm-12 .col-sm-6 #doneTask > .row #drag_status {
+  width: 19%;
+  text-align: center;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 #notDoneTask > .row #drag_status.for-notdone-task,
+#nav-drag-drop > .col-sm-12 .col-sm-6 #doneTask > .row #drag_status.for-notdone-task {
+  text-transform: uppercase;
+  color: #dc3545;
+  font-weight: bold;
+}
+#nav-drag-drop > .col-sm-12 .col-sm-6 #notDoneTask > .row #drag_status.for-done-task,
+#nav-drag-drop > .col-sm-12 .col-sm-6 #doneTask > .row #drag_status.for-done-task {
+  text-transform: uppercase;
+  color: #007bff;
+  font-weight: bold;
+}
+#nav-drag-drop > .col-sm-12 .save-task-drag {
+  margin: 15px 0;
+}
+#nav-drag-drop > .col-sm-12 .save-task-drag .drag-notes {
+  margin: 10px 0;
+  color: #000;
+}
+#nav-drag-drop > .col-sm-12 .save-task-drag #saveTaskDrag {
+  width: 100%;
 }

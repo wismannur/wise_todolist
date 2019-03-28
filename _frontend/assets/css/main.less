@@ -233,6 +233,18 @@
 			&.for_date, &.time, &.category, &.status {
 				text-align: center
 			}
+			&.status {
+				&.for-notdone-task {
+					text-transform: uppercase;
+					color: #dc3545;
+					font-weight: bold;
+				}
+				&.for-done-task {
+					text-transform: uppercase;
+					color: @color_2;
+					font-weight: bold;
+				}
+			}
 			.btn-left {
 				border-radius: .25rem 0 0 .25rem;
 				margin-right: -5px;
@@ -352,4 +364,100 @@ section .section-title {
     border-top-right-radius: .25rem;
     color: #eee;
     font-size: 20px;
+}
+
+#nav-tab {
+	> a {
+		width: 50%;
+	}
+}
+#nav-drag-drop {
+	> .col-sm-12 {
+		.col-sm-6 {
+			> h5 {
+				text-align: center;
+				height: 40px;
+				padding: 8px;
+				color: #fff;
+
+				&.title-task-notdone {
+					background: #dc3545;
+				}
+
+				&.title-task-done {
+					background: @color_2;
+				}
+			}
+	
+			&:first-child {
+				padding-left: 0%;
+			}
+	
+			&:last-child {
+				padding-right: 0%;
+			}
+
+			#notDoneTask {
+				border: 1px solid #dc3545;
+			}
+	
+			#doneTask {
+				border: 1px solid @color_2;
+			}
+
+			#notDoneTask, #doneTask {
+				float: left;
+				width: 100%;
+				min-height: 500px;
+				padding: 10px;
+	
+				> .row {
+					margin: 0px;
+					border: 1px solid #ddd;
+					padding: 15px;
+					cursor: all-scroll;
+					&:nth-child(even) {
+						background-color: #f2f2f2;
+					}
+					#drag_time {
+						width: 15%;
+					}
+					#drag_name_todo_item {
+						width: 49%;
+						
+					}
+					#drag_category {
+						width: 17%;
+						text-align: center;
+					}
+					#drag_status {
+						width: 19%;
+						text-align: center;
+						&.for-notdone-task {
+							text-transform: uppercase;
+							color: #dc3545;
+							font-weight: bold;
+						}
+						&.for-done-task {
+							text-transform: uppercase;
+							color: @color_2;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+		
+		.save-task-drag {
+			margin: 15px 0;
+			.drag-notes {
+				margin: 10px 0;
+				color: #000;
+			}
+			#saveTaskDrag {
+				width: 100%;
+			}
+		}
+	}
+	
 }
