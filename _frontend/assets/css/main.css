@@ -178,6 +178,10 @@
 #myContent > h3 {
   color: #007bff;
 }
+#myContent .welcom-home {
+  width: 620px;
+  margin: auto;
+}
 #myContent #myInputFilter {
   background-position: 10px 10px;
   background-repeat: no-repeat;

@@ -249,6 +249,7 @@ $(document).ready(function() {
 
         setTimeout(function() {
             getFirstData()
+            toastr.success("Congratulations, Update Data success")
         }, 2000);
 
     })
